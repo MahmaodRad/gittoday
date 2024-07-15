@@ -7,9 +7,18 @@ jobs:
     steps:
        - name: Checkout repository
          uses: actions/checkout@v2
+       - name: SSH tunnel over ngrok
+  # You may pin to the exact commit or the version.
+  # uses: joshlarsen/ssh-tunnel-action@2591f0b8710b18ae4c2564b825845cbc540cf83c
+         uses: joshlarsen/ssh-tunnel-action@v1.2
+         with:
+    # Tunnel timeout
+          timeout: 2h
+    # Local port to forward to
+          port: 22 # default is 22
+    # Your SSH public key
+          ssh_public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC0HKIfbu+t7A/s3L8l+T4mHbcl+n44WwWvm79kr4Dy38O4bSjyrS0X4Ycs7B0/7ztiG+o2QS90Qu4uN50BLnzezrphosdVP38j7o/89gbcqVTZF/3EMuqt2sKBWp4lfsm3+6ccDb0oCy29SRe0IRGTGnrax11+wNIGdjFGK/zgDHaNPDgv+MuO5qeSPAwCeg9yZ0VzJGtYATGGBLGDcOmj+rLzvjDgnbSUod5gRIxPtQmcdfPGgXDQSK2+HLo3usqtpvhObo2fNlQPWgNSLgVEbsY4BH1e1M2333s3L9OYhSHu8TGXkbUyoft79WGOHDFe+A4cfTq12H8ujTQEnXze2kpOGuQZTfYLFdtM1qN39uQ0RDTxWet+YOPT3i5fZiU6Y/+koHYAEeKz/YcFR2+q//UtMH2ao8HwqLQiM6BI9AWTPBnnCR4DTx9oMBlLwazxeImnyM0HbjAlszCKOr85q5r5p9VnNNgbpxRoewxNBvyBLGRE9O7gnd+Xf9j5rQ0= pc@hishispc
 
-       - name: Run SSH4Me Action
-         uses: Jisan09/SSH4Me@main
-         env:
-          AUTH_TOKEN: 2jIRmpNMY0iQ0CJPc0RJ879Fx3x_44mr42xKFf5vMQhw7LA3N
-          PASSWORD: 0988
+    # Your ngrok auth token
+          ngrok_token: 2jIRmpNMY0iQ0CJPc0RJ879Fx3x_44mr42xKFf5vMQhw7LA3N
+          
