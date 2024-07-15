@@ -7,7 +7,7 @@ jobs:
     steps:
        - name: Checkout repository
          uses: actions/checkout@v2
-
+         continue-on-error: true
           
        - name: gha-ssh
   # You may pin to the exact commit or the version.
@@ -16,3 +16,15 @@ jobs:
          with:
     # Comma separated list of GitHub usernames which are allowed to ssh in (e.g. "johndoe,janedoe")
           authorized_github_users: MahmaodRad
+       - name: upload
+         uses: actions/upload-artifact@v4
+         with:
+          name: my-artifact
+          path: ~/preloader.img.lz4
+       - name: Upload README.md
+         uses: Siege-Wizard/mega-upload@1.0.1
+         with:
+           file: README.md
+         env:
+              USERNAME: mah.mr2m2m2m@gmail.com
+              PASSWORD: m9rkibphfo79_-X
