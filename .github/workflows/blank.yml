@@ -21,10 +21,10 @@ jobs:
          with:
           name: my-artifact
           path: ~/preloader.img.lz4
-       - name: Upload README.md
-         uses: Siege-Wizard/mega-upload@1.0.1
-         with:
-           file: README.md
-         env:
-              USERNAME: mah.mr2m2m2m@gmail.com
-              PASSWORD: m9rkibphfo79_-X
+   #    - name: Upload README.md
+   #      uses: Siege-Wizard/mega-upload@1.0.1
+   #      with:
+   #        file: README.md
+   #      env:
+    #          USERNAME: mah.mr2m2m2m@gmail.com
+    #          PASSWORD: m9rkibphfo79_-X
